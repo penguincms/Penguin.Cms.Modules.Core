@@ -1,0 +1,27 @@
+﻿@model INavigationMenu
+@{
+	Layout = null;
+}
+
+@if (Model != null)
+{
+<script>
+		var Navigation = {
+			Uri: '@Model.Uri',
+			Href: '@Model.Href'
+		};
+</script>
+}
+else
+{
+<script>
+			var Navigation = {
+				Uri: window.location.pathname,
+				Href: window.location.pathname + window.location.search
+			};
+</script>
+
+}
+
+<script>
+</script>

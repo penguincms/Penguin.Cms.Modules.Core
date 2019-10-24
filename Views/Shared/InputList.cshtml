@@ -1,0 +1,22 @@
+﻿@model InputListPageModel
+
+<template>
+    <partial name="InputListOption" model="new InputListOptionPageModel(Model.LabelPropertyName, Model.ValuePropertyName, Model.SourceType) { ItemType = Model.ItemType }" />
+</template>
+
+<div class="selectorValues" data-label="@(Model.LabelPropertyName)" data-value="@(Model.ValuePropertyName)">
+    @foreach (InputListOptionPageModel optionModel in Model.SelectedItems)
+    {
+    <partial name="InputListOption" model="optionModel" />
+    }
+</div>
+<div class="searchContainer">
+    <input type="text" class="TypeSearch" placeholder="@(Model.BackingObject?.Property?.Name) Search" data-searchurl="@Model.SearchUrl" />
+    @Html.MaterialIcon("search")
+</div>
+
+<script>
+    $(document).ready(function () {
+        Meta.AttachSearchHandler();
+    });
+</script>

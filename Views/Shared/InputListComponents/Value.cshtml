@@ -1,0 +1,9 @@
+﻿@model InputListOptionPageModel
+
+<div data-anchor="@Model.SetAnchor">
+    <label>
+        @(Model.Label)
+    </label>
+    @Html.MaterialIcon("delete", new Dictionary<string, string> { ["onclick"] = @"$(this).closest('[data-anchor=\'True\']').remove()" })
+    <input type="hidden" value="@Model.DefaultValue" />
+</div>

@@ -1,0 +1,41 @@
+﻿@model INavigationMenu
+@{
+	Layout = null;
+}
+
+@if(Model is null)
+{
+    return;
+}
+
+@if (Model.Children.AnyNotNull())
+{
+<li>
+    <a data-uri="@Model.Uri" href="@Model.Href" @(Html.Attribute("class", "selected", string.Equals(Context.Request.Path, Model.Href)))>
+        @if (!string.IsNullOrWhiteSpace(Model.Icon))
+			{
+        <i class="material-icons md-24">
+            @Model.Icon
+        </i>
+			}
+        <span>@Model.Text</span>
+    </a>
+</li>
+<ul>
+    @foreach (INavigationMenu child in Model.Children) {
+    <partial name="Child.cshtml" model="@child" />
+		}
+</ul>
+}
+else
+{
+<li>
+    <a data-uri="@Model.Uri" href="@Model.Href" @(Html.Attribute("class", "selected", string.Equals(Context.Request.Path, Model.Href)))>
+        @if (!string.IsNullOrWhiteSpace(Model.Icon))
+			{
+        <i class="material-icons md-24">@Model.Icon</i>
+			}
+        <span>@Model.Text</span>
+    </a>
+</li>
+}

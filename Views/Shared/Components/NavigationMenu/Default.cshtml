@@ -1,0 +1,18 @@
+﻿@model INavigationMenu
+@{
+	Layout = null;
+}
+
+@if (Model is null)
+{
+	<!--Null Navigation Model-->
+}
+else
+{
+<ul class="NavigationMenu" id="@Model.Text.Replace(" ", "")">
+    @foreach (INavigationMenu child in Model.Children)
+    {
+        <partial name="Child.cshtml" model="@child" />
+    }
+</ul>
+}

@@ -1,0 +1,30 @@
+﻿@model DataTable
+@using System.Data
+
+<table>
+    <tr>
+        @for (int i = 0; i < Model.Columns.Count; i++)
+		{
+        <th>@Model.Columns[i].ColumnName</th>
+		}
+    </tr>
+
+    @for (int i = 0; i < Model.Rows.Count; i++)
+	{
+
+    <tr>
+
+        @for (int j = 0; j < Model.Columns.Count; j++)
+			{
+				object data = Model.Rows[i][j];
+
+				if (data is HtmlString) {
+        <td>@Html.Raw(data)</td>
+				} else
+				{
+        <td>@data.ToString()</td>
+				}
+			}
+    </tr>
+	}
+</table>

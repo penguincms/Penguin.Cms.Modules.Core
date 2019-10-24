@@ -1,0 +1,14 @@
+﻿@model InputListOptionPageModel
+
+@using Penguin.Reflection.Abstractions;
+
+<property data-anchor="@Model.SetAnchor" data-coretype="@Model.SourceType.CollectionType.CoreType" data-propertytype="@Model.SourceType.CollectionType.FullName">
+    @if (Model.SourceType.CollectionType.CoreType == CoreType.Reference)
+    {
+    <partial name="~/Views/Shared/InputListComponents/Reference.cshtml" model="Model" />
+    }
+    else
+    {
+    <partial name="~/Views/Shared/InputListComponents/Value.cshtml" model="Model" />
+    }
+</property>

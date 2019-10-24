@@ -1,0 +1,5 @@
+﻿@model InputListOptionPageModel
+
+<property data-anchor="@Model.SetAnchor" data-propertyname="@(Model?.ValuePropertyName)" data-coretype="@Model.ValueCoreType">
+    <partial name="~/Views/Shared/InputListComponents/Value.cshtml" model="Model" />
+</property>

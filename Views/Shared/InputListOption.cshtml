@@ -1,0 +1,25 @@
+﻿@model InputListOptionPageModel
+
+@using Penguin.Reflection.Abstractions;
+
+@*This whole thing SUPER needs to be cleaned up*@
+
+@* If the property cant be found on the input type, we're going to assume that the input type is representative of the association but not the object and treat it as a value*@
+@*This is to compensate for whatever jackass thought it would be a good idea to use complex objects as foreign key relationships*@
+@if (Model.ValueProperty is null)
+{
+<partial name="~/Views/Shared/InputListComponents/Value.cshtml" model="Model" />
+}
+@*Otherwise we're going to act like sane individials and treat the object as complex*@
+else if (Model.SourceType.CoreType == CoreType.Collection)
+{
+<partial name="~/Views/Shared/InputListComponents/Collection.cshtml" model="Model" />
+}
+else if (Model.SourceType.CoreType == CoreType.Reference)
+{
+<partial name="~/Views/Shared/InputListComponents/Reference.cshtml" model="Model" />
+}
+else
+{
+<partial name="~/Views/Shared/InputListComponents/Value.cshtml" model="Model" />
+}

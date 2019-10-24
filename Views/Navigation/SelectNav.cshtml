@@ -1,0 +1,15 @@
+﻿@model INavigationMenu
+@{
+	Layout = null;
+}
+
+<select onchange="window.location.href = $(this).val();">
+    <option>Navigate...</option>
+    @if (Model.Children.AnyNotNull())
+	{
+		foreach (INavigationMenu item in Model.Children)
+		{
+            <option data-uri="@item.Uri" value="@item.Href">@item.Text</option>
+		}
+	}
+</select>
