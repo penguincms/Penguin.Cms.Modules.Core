@@ -7,12 +7,14 @@
     <PackageProjectUrl>https://github.com/penguincms/Penguin.Cms.Modules.Core</PackageProjectUrl>
     <Version>1.0.0</Version>
     <Description>Not Available</Description>
+    <AssemblyName>Penguin.Cms.Modules.Core</AssemblyName>
+    <RootNamespace>Penguin.Cms.Modules.Core</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Content Remove="wwwroot\**\*" />
-    <PackageReference Include="Penguin.Cms.Core" Version="2.0.1-T9M1HHH" />
-    <PackageReference Include="Penguin.Navigation.Abstractions" Version="1.0.1-T9M1HHH" />
-    <PackageReference Include="Penguin.Cms.Web" Version="1.0.1-T9M1K2Y" />
+    <PackageReference Include="Penguin.Cms.Core" Version="2.0.1-T9M2XAX" />
+    <PackageReference Include="Penguin.Navigation.Abstractions" Version="1.0.1-T9M2XAX" />
+    <PackageReference Include="Penguin.Cms.Web" Version="1.0.1-T9M2XAX" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="wwwroot\**\*" />
