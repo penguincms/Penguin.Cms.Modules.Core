@@ -15,7 +15,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.0.0" />
     <PackageReference Include="Penguin.Navigation.Abstractions" Version="1.0.1-T9MJL4F" />
     <PackageReference Include="Penguin.Cms.Core" Version="2.0.1-T9MJL4F" />
-    <PackageReference Include="Penguin.Cms.Web" Version="1.0.1-T9MOXI1" />
+    <PackageReference Include="Penguin.Cms.Web" Version="1.0.1-T9N916Q" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="wwwroot\**\*" />
