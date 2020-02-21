@@ -12,7 +12,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Remove="wwwroot\**\*" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.2" />
     <ProjectReference Include="..\Penguin.Cms.Abstractions\Penguin.Cms.Abstractions.Local.csproj" />
     <ProjectReference Include="..\Penguin.Cms.Core\Penguin.Cms.Core.Local.csproj" />
     <ProjectReference Include="..\Penguin.Cms.Entities\Penguin.Cms.Entities.Local.csproj" />
@@ -60,7 +60,7 @@
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="3.1.1" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="3.1.2" />
   </ItemGroup>
   <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
 </Project>
