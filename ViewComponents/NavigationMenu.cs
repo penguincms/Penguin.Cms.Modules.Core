@@ -15,12 +15,12 @@ namespace Penguin.Cms.Modules.Core.ViewComponents
 
         public NavigationMenu(ComponentService componentService)
         {
-            ComponentService = componentService;
+            this.ComponentService = componentService;
         }
 
         public IViewComponentResult Invoke(string name)
         {
-            List<INavigationMenu> Menus = ComponentService.GetComponents<INavigationMenu, string>(name).ToList();
+            List<INavigationMenu> Menus = this.ComponentService.GetComponents<INavigationMenu, string>(name).ToList();
 
             //INavigationMenu Template = Menus.FirstOrDefault();
 

@@ -36,7 +36,7 @@ namespace Penguin.Cms.Modules.Core.ComponentProviders
 
         public IEnumerable<INavigationMenu> GetComponents(string MenuName)
         {
-            INavigationMenu toReturn = Search(MenuName);
+            INavigationMenu toReturn = this.Search(MenuName);
 
             if (toReturn is null)
             {
@@ -52,7 +52,7 @@ namespace Penguin.Cms.Modules.Core.ComponentProviders
         {
             List<INavigationMenu> toCheck = new List<INavigationMenu>
             {
-                GenerateMenuTree()
+                this.GenerateMenuTree()
             };
 
             while (toCheck.Any())

@@ -7,17 +7,19 @@ namespace Penguin.Cms.Modules.Core.Models
 {
     public class InputListOptionPageModel : InputListBase
     {
+        private bool setAnchor;
+
         /// <summary>
         /// The default value for the type represented by this option if not populated, otherwise the actual value of the object
         /// </summary>
-        public string DefaultValue => Value ?? ValueProperty?.Type?.Default ?? string.Empty;
+        public string DefaultValue => this.Value ?? this.ValueProperty?.Type?.Default ?? string.Empty;
 
         public string Label { get; set; } = string.Empty;
 
         /// <summary>
         /// The type of this individual selection option
         /// </summary>
-        public System.Type OptionType => BackingObject?.GetType();
+        public System.Type OptionType => this.BackingObject?.GetType();
 
         /// <summary>
         /// Dirty hack to determine if the embedded view calling this is the first outer wrapper in its
@@ -27,23 +29,21 @@ namespace Penguin.Cms.Modules.Core.Models
         {
             get
             {
-                bool first = !setAnchor;
+                bool first = !this.setAnchor;
 
-                setAnchor = true;
+                this.setAnchor = true;
 
                 return first;
             }
         }
 
         public string Value { get; set; } = string.Empty;
-        public CoreType? ValueCoreType => ValueProperty?.Type?.CoreType ?? CoreType.Value;
+        public CoreType? ValueCoreType => this.ValueProperty?.Type?.CoreType ?? CoreType.Value;
 
         /// <summary>
         /// A property representing the "key" for the object for use in complex associations
         /// </summary>
-        public IMetaProperty ValueProperty => ItemType?.GetProperty(ValuePropertyName);
-
-        private bool setAnchor;
+        public IMetaProperty ValueProperty => this.ItemType?.GetProperty(this.ValuePropertyName);
 
         public InputListOptionPageModel(object? backingObject = null) : base(new MetaObject(-1) { Value = backingObject?.ToString() })
         {

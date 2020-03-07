@@ -16,7 +16,7 @@ namespace Penguin.Cms.Modules.Core.Models
 
         public InputListBase(IMetaObject backingObject)
         {
-            BackingObject = backingObject;
+            this.BackingObject = backingObject;
         }
 
         public InputListBase()

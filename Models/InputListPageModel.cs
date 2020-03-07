@@ -25,7 +25,7 @@ namespace Penguin.Cms.Modules.Core.Models
                 throw new System.ArgumentNullException(nameof(Value));
             }
 
-            SearchUrl = searchUrl;
+            this.SearchUrl = searchUrl;
             this.SelectedItems = new List<InputListOptionPageModel>();
 
             this.SourceType = new MetaType(-1)
@@ -64,7 +64,7 @@ namespace Penguin.Cms.Modules.Core.Models
                 throw new System.ArgumentNullException(nameof(valueProperty));
             }
 
-            SearchUrl = searchUrl;
+            this.SearchUrl = searchUrl;
 
             this.LabelPropertyName = labelProperty.Name;
             this.ValuePropertyName = valueProperty.Name;
@@ -79,7 +79,7 @@ namespace Penguin.Cms.Modules.Core.Models
                 throw new System.ArgumentNullException(nameof(Model));
             }
 
-            SearchUrl = searchUrl;
+            this.SearchUrl = searchUrl;
 
             this.LabelPropertyName = labelProperty;
 
@@ -95,7 +95,7 @@ namespace Penguin.Cms.Modules.Core.Models
                 throw new System.ArgumentNullException(nameof(Model));
             }
 
-            SearchUrl = searchUrl;
+            this.SearchUrl = searchUrl;
 
             this.SetUp(Model);
         }
@@ -111,7 +111,7 @@ namespace Penguin.Cms.Modules.Core.Models
                 this.ItemType = Model.Type;
                 if (!Model.Null)
                 {
-                    SelectedItems.Add(
+                    this.SelectedItems.Add(
                         new InputListOptionPageModel(this.LabelPropertyName, this.ValuePropertyName, Model)
                         {
                             ItemType = this.ItemType
