@@ -25,5 +25,55 @@
             A property representing the "key" for the object for use in complex associations
             </summary>
         </member>
+        <member name="T:Penguin.Cms.Modules.Core.Navigation.NavigationMenu">
+            <summary>
+            A slim INavigationMenu implementation for systems where the Navigation Menu module is not used
+            </summary>
+        </member>
+        <member name="P:Penguin.Cms.Modules.Core.Navigation.NavigationMenu.Children">
+            <summary>
+            Child navigation menu items for recursive menus
+            </summary>
+        </member>
+        <member name="P:Penguin.Cms.Modules.Core.Navigation.NavigationMenu.Href">
+            <summary>
+            Navigation menu link target
+            </summary>
+        </member>
+        <member name="P:Penguin.Cms.Modules.Core.Navigation.NavigationMenu.Icon">
+            <summary>
+            Optional material icon name
+            </summary>
+        </member>
+        <member name="P:Penguin.Cms.Modules.Core.Navigation.NavigationMenu.Name">
+            <summary>
+            Navigation menu item name for reference purposes
+            </summary>
+        </member>
+        <member name="P:Penguin.Cms.Modules.Core.Navigation.NavigationMenu.Ordinal">
+            <summary>
+            Ordinal int representing position in parent list
+            </summary>
+        </member>
+        <member name="P:Penguin.Cms.Modules.Core.Navigation.NavigationMenu.Parent">
+            <summary>
+            Parent navigation menu item, if not root
+            </summary>
+        </member>
+        <member name="P:Penguin.Cms.Modules.Core.Navigation.NavigationMenu.Permissions">
+            <summary>
+            Security group permissions list used to determine menu visibility
+            </summary>
+        </member>
+        <member name="P:Penguin.Cms.Modules.Core.Navigation.NavigationMenu.Text">
+            <summary>
+            The display text for this navigation menu item
+            </summary>
+        </member>
+        <member name="P:Penguin.Cms.Modules.Core.Navigation.NavigationMenu.Uri">
+            <summary>
+            The tree path that leads to this navigation menu item, using Name
+            </summary>
+        </member>
     </members>
 </doc>
