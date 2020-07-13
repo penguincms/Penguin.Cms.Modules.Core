@@ -11,7 +11,7 @@ namespace Penguin.Cms.Modules.Core.ComponentProviders
 {
     public abstract class NavigationMenuProvider : IProvideComponents<INavigationMenu, string>
     {
-        public ISecurityGroupPermission CreatePermission(string RoleName, PermissionTypes PermissionType)
+        public static ISecurityGroupPermission CreatePermission(string RoleName, PermissionTypes PermissionType)
         {
             return new SecurityGroupPermission()
             {
