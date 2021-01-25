@@ -13,7 +13,6 @@ namespace Penguin.Cms.Modules.Core.Models
     [SuppressMessage("Design", "CA1054:Uri parameters should not be strings")]
     public class InputListPageModel : InputListBase
     {
-        [SuppressMessage("Design", "CA1056:Uri properties should not be strings")]
         public string SearchUrl { get; set; }
 
         public List<InputListOptionPageModel> SelectedItems { get; } = new List<InputListOptionPageModel>();

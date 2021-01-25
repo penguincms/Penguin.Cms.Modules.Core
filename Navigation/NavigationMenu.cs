@@ -8,7 +8,7 @@ namespace Penguin.Cms.Modules.Core.Navigation
     /// A slim INavigationMenu implementation for systems where the Navigation Menu module is not used
     /// </summary>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2227:Collection properties should be read only", Justification = "Needs to be settable for easy tree initialization")]
-    
+
     public class NavigationMenu : INavigationMenu<INavigationMenu>
     {
         /// <summary>
@@ -39,10 +39,8 @@ namespace Penguin.Cms.Modules.Core.Navigation
         /// <summary>
         /// Parent navigation menu item, if not root
         /// </summary>
-#pragma warning disable CS8613 // Nullability of reference types in return type doesn't match implicitly implemented member.
-        public INavigationMenu? Parent { get; set; }
+       public INavigationMenu? Parent { get; set; }
 
-#pragma warning restore CS8613 // Nullability of reference types in return type doesn't match implicitly implemented member.
 
         /// <summary>
         /// Security group permissions list used to determine menu visibility
