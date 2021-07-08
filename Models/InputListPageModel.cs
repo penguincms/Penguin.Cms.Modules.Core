@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace Penguin.Cms.Modules.Core.Models
 {
-    [SuppressMessage("Design", "CA1054:Uri parameters should not be strings")]
+    
     public class InputListPageModel : InputListBase
     {
         public string SearchUrl { get; set; }

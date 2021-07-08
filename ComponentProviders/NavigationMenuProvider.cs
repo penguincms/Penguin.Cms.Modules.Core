@@ -23,7 +23,7 @@ namespace Penguin.Cms.Modules.Core.ComponentProviders
             };
         }
 
-        public ISecurityGroupPermission CreatePermission(IRole Role, PermissionTypes PermissionType)
+        public static ISecurityGroupPermission CreatePermission(IRole Role, PermissionTypes PermissionType)
         {
             return new SecurityGroupPermission()
             {
