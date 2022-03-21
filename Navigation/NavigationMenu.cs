@@ -1,4 +1,4 @@
-﻿using Penguin.Navigation.Abstractions;
+using Penguin.Navigation.Abstractions;
 using Penguin.Security.Abstractions.Interfaces;
 using System.Collections.Generic;
 
@@ -39,7 +39,6 @@ namespace Penguin.Cms.Modules.Core.Navigation
         /// Parent navigation menu item, if not root
         /// </summary>
         public INavigationMenu? Parent { get; set; }
-
 
         /// <summary>
         /// Security group permissions list used to determine menu visibility
