@@ -5,12 +5,11 @@ using Penguin.Reflection.Serialization.Abstractions.Wrappers;
 using Penguin.Reflection.Serialization.Objects;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace Penguin.Cms.Modules.Core.Models
 {
-    
+
     public class InputListPageModel : InputListBase
     {
         public string SearchUrl { get; set; }
