@@ -13,7 +13,7 @@ namespace Penguin.Cms.Modules.Core.Models
         public Dictionary<string, string> PostbackParameters { get; } = new Dictionary<string, string>();
         public int Start => this.Page * this.Count;
         public int TotalCount { get; set; }
-        public int TotalPages => (int)Math.Ceiling((this.TotalCount / (decimal)this.Count));
+        public int TotalPages => (int)Math.Ceiling(this.TotalCount / (decimal)this.Count);
     }
 
     public class PagedListContainer : PagedListContainer<object>
