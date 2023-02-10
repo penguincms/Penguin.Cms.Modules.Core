@@ -34,9 +34,9 @@ namespace Penguin.Cms.Modules.Core.ComponentProviders
 
         public abstract INavigationMenu GenerateMenuTree();
 
-        public IEnumerable<INavigationMenu> GetComponents(string MenuName)
+        public IEnumerable<INavigationMenu> GetComponents(string Id)
         {
-            INavigationMenu toReturn = this.Search(MenuName);
+            INavigationMenu toReturn = Search(Id);
 
             if (toReturn is null)
             {
@@ -48,11 +48,11 @@ namespace Penguin.Cms.Modules.Core.ComponentProviders
             }
         }
 
-        protected INavigationMenu Search(string Name)
+        protected INavigationMenu? Search(string Name)
         {
-            List<INavigationMenu> toCheck = new List<INavigationMenu>
+            List<INavigationMenu> toCheck = new()
             {
-                this.GenerateMenuTree()
+                GenerateMenuTree()
             };
 
             while (toCheck.Any())

@@ -9,7 +9,6 @@ using System.Linq;
 
 namespace Penguin.Cms.Modules.Core.Models
 {
-
     public class InputListPageModel : InputListBase
     {
         public string SearchUrl { get; set; }
@@ -23,10 +22,10 @@ namespace Penguin.Cms.Modules.Core.Models
                 throw new System.ArgumentNullException(nameof(Value));
             }
 
-            this.SearchUrl = searchUrl;
-            this.SelectedItems = new List<InputListOptionPageModel>();
+            SearchUrl = searchUrl;
+            SelectedItems = new List<InputListOptionPageModel>();
 
-            this.SourceType = new MetaType(-1)
+            SourceType = new MetaType(-1)
             {
                 CoreType = CoreType.Collection,
                 CollectionType = new MetaTypeHolder(Value.GetType().GetCollectionType())
@@ -34,14 +33,14 @@ namespace Penguin.Cms.Modules.Core.Models
 
             foreach (object thisItem in Value.Cast<object>())
             {
-                InputListOptionPageModel optionModel = new InputListOptionPageModel(thisItem)
+                InputListOptionPageModel optionModel = new(thisItem)
                 {
-                    SourceType = this.SourceType,
+                    SourceType = SourceType,
 
-                    ValuePropertyName = this.ValuePropertyName
+                    ValuePropertyName = ValuePropertyName
                 };
 
-                this.SelectedItems.Add(optionModel);
+                SelectedItems.Add(optionModel);
             }
         }
 
@@ -62,12 +61,12 @@ namespace Penguin.Cms.Modules.Core.Models
                 throw new System.ArgumentNullException(nameof(valueProperty));
             }
 
-            this.SearchUrl = searchUrl;
+            SearchUrl = searchUrl;
 
-            this.LabelPropertyName = labelProperty.Name;
-            this.ValuePropertyName = valueProperty.Name;
+            LabelPropertyName = labelProperty.Name;
+            ValuePropertyName = valueProperty.Name;
 
-            this.SetUp(Model);
+            SetUp(Model);
         }
 
         public InputListPageModel(IMetaObject Model, string labelProperty, string valueProperty, string searchUrl)
@@ -77,13 +76,13 @@ namespace Penguin.Cms.Modules.Core.Models
                 throw new System.ArgumentNullException(nameof(Model));
             }
 
-            this.SearchUrl = searchUrl;
+            SearchUrl = searchUrl;
 
-            this.LabelPropertyName = labelProperty;
+            LabelPropertyName = labelProperty;
 
-            this.ValuePropertyName = valueProperty;
+            ValuePropertyName = valueProperty;
 
-            this.SetUp(Model);
+            SetUp(Model);
         }
 
         public InputListPageModel(IMetaObject Model, string searchUrl)
@@ -93,42 +92,42 @@ namespace Penguin.Cms.Modules.Core.Models
                 throw new System.ArgumentNullException(nameof(Model));
             }
 
-            this.SearchUrl = searchUrl;
+            SearchUrl = searchUrl;
 
-            this.SetUp(Model);
+            SetUp(Model);
         }
 
         private void SetUp(IMetaObject Model)
         {
-            this.BackingObject = Model;
+            BackingObject = Model;
 
-            this.SourceType = Model.Type;
+            SourceType = Model.Type;
 
             if (Model.GetCoreType() != CoreType.Collection)
             {
-                this.ItemType = Model.Type;
+                ItemType = Model.Type;
                 if (!Model.Null)
                 {
-                    this.SelectedItems.Add(
-                        new InputListOptionPageModel(this.LabelPropertyName, this.ValuePropertyName, Model)
+                    SelectedItems.Add(
+                        new InputListOptionPageModel(LabelPropertyName, ValuePropertyName, Model)
                         {
-                            ItemType = this.ItemType
+                            ItemType = ItemType
                         });
                 }
             }
             else if (Model.GetCoreType() == CoreType.Collection)
             {
                 //Add all of the currently selected items to the display box
-                this.ItemType = Model.Template.Type;
+                ItemType = Model.Template.Type;
                 foreach (IMetaObject thisItem in Model.CollectionItems)
                 {
-                    InputListOptionPageModel optionModel = new InputListOptionPageModel(this.LabelPropertyName, this.ValuePropertyName, thisItem)
+                    InputListOptionPageModel optionModel = new(LabelPropertyName, ValuePropertyName, thisItem)
                     {
-                        ItemType = this.ItemType,
-                        SourceType = this.SourceType
+                        ItemType = ItemType,
+                        SourceType = SourceType
                     };
 
-                    this.SelectedItems.Add(optionModel);
+                    SelectedItems.Add(optionModel);
                 }
             }
         }

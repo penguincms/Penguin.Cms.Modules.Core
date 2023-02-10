@@ -6,7 +6,7 @@ namespace Penguin.Cms.Modules.Core.Controllers
     {
         public virtual IActionResult Index(string Id = "")
         {
-            return this.View((object)Id);
+            return View((object)Id);
         }
     }
 }
