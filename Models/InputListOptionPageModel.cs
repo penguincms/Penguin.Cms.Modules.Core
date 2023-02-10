@@ -38,6 +38,7 @@ namespace Penguin.Cms.Modules.Core.Models
         }
 
         public string Value { get; set; } = string.Empty;
+
         public CoreType? ValueCoreType => ValueProperty?.Type?.CoreType ?? CoreType.Value;
 
         /// <summary>
